@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  width: 100vw;
+  height: 4rem;
+  background: var(--color-layout);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  > div a {
+    margin: 0.25rem;
+  }
+}
+
+button {
+  font-size: 0.875rem;
+  border-radius: 6px;
+  padding: 0.5rem;
+  cursor: pointer;
+}

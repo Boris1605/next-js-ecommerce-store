@@ -1,6 +1,11 @@
-import Image from 'next/image';
-import styles from './page.module.css';
+// import Image from 'next/image';
+import Button from './Button';
+// import styles from './page.module.scss';
 
 export default function Home() {
-  return <div>Hello World</div>;
+  return (
+    <div>
+      <Button />
+    </div>
+  );
 }
