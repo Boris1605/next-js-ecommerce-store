@@ -1,25 +1,29 @@
-// import 'server-only';
+import 'server-only';
 
 const products = [
   {
     id: 1,
-    type: '',
+    name: 'test',
+    type: 'test',
     price: '2.99€',
   },
   {
     id: 2,
-    type: '',
+    name: 'test',
+    type: 'test',
     price: '3€',
   },
   {
     id: 3,
-    type: '',
-    price: '',
+    name: 'test',
+    type: 'test',
+    price: '1€',
   },
   {
     id: 4,
-    type: '',
-    price: '',
+    name: 'test',
+    type: 'test',
+    price: '2€',
   },
 ];
 
