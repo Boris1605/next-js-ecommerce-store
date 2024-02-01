@@ -12,10 +12,11 @@ export default function ProductsPage() {
 
   return (
     <div>
-      This are my Products
+      <h1>These are the Products</h1>
       {products.map((product) => {
         return (
           <div key={`products-${product.id}`}>
+            <a data-test-id="product-1">{product.name}</a>
             <Link href={`/products/${product.id}`}>
               <div>{product.name}</div>
               <Image
