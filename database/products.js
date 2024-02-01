@@ -3,26 +3,26 @@ import 'server-only';
 const products = [
   {
     id: 1,
-    name: 'test',
-    type: 'test',
+    name: 'test1',
+    type: 'test1',
     price: '2.99€',
   },
   {
     id: 2,
-    name: 'test',
-    type: 'test',
+    name: 'test2',
+    type: 'test2',
     price: '3€',
   },
   {
     id: 3,
-    name: 'test',
-    type: 'test',
+    name: 'test3',
+    type: 'test3',
     price: '1€',
   },
   {
     id: 4,
-    name: 'test',
-    type: 'test',
+    name: 'test4',
+    type: 'test4',
     price: '2€',
   },
 ];
