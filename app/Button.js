@@ -8,7 +8,7 @@ export default function Button() {
   const router = useRouter();
   return (
     <button className={styles.button} onClick={router.refresh()}>
-      Add to chart
+      Add to cart
     </button>
   );
 }

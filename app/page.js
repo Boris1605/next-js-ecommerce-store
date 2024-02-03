@@ -6,7 +6,7 @@
 export default function Home() {
   return (
     <div>
-      <h1>Home: Store Name</h1>
+      <h1>SMART GADGETS</h1>
       {/* <Image src={imageName} alt='Test Logo' /> */}
       {/* <Button /> */}
     </div>

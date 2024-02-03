@@ -3,27 +3,31 @@ import 'server-only';
 const products = [
   {
     id: 1,
-    name: 'test1',
-    type: 'test1',
-    price: '2.99€',
+    name: 'Magsafe Powerbank',
+    type: 'Battery',
+    price: 9.99,
+    currency: 'EUR',
   },
   {
     id: 2,
-    name: 'test2',
-    type: 'test2',
-    price: '3€',
+    name: 'Smart Ring',
+    type: 'Ring',
+    price: 4.99,
+    currency: 'EUR',
   },
   {
     id: 3,
-    name: 'test3',
-    type: 'test3',
-    price: '1€',
+    name: 'Smart Thermostat',
+    type: 'Thermostat',
+    price: 1.99,
+    currency: 'EUR',
   },
   {
     id: 4,
-    name: 'test4',
-    type: 'test4',
-    price: '2€',
+    name: 'Lamp with Speaker',
+    type: 'Lamp',
+    price: 7.99,
+    currency: 'EUR',
   },
 ];
 

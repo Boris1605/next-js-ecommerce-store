@@ -7,7 +7,7 @@ export default function AboutPage() {
   return (
     <div>
       <h1>About us</h1>
-      <div>This is a Store for selling ...</div>
+      <div>Here you can buy Smart Gadgets</div>
     </div>
   );
 }
