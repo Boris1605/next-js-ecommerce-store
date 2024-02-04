@@ -3,15 +3,15 @@ import { notFound } from 'next/navigation';
 import Button from '../../../app/Button';
 import { getProduct } from '../../../database/products';
 
-export function generateMetadata(props) {
-  const singleProduct = getProduct(Number(props.params.productId));
+export async function generateMetadata(props) {
+  const singleProduct = await getProduct(Number(props.params.productId));
   return {
     title: singleProduct?.name,
   };
 }
 
-export default function ProductPage(props) {
-  const singleProduct = getProduct(Number(props.params.productId));
+export default async function ProductPage(props) {
+  const singleProduct = await getProduct(Number(props.params.productId));
 
   if (!singleProduct) {
     notFound();
