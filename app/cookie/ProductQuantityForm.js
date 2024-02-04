@@ -1,21 +1,18 @@
 'use client';
 
 import { useState } from 'react';
-import { createOrUpdateCookie } from './action';
+import { createCookie } from './action';
 
-export default function ProductQuantityForm(props) {
+export default function ProductQuantityForm() {
   const [quantity, setQuantity] = useState('');
+
   return (
     <form>
       <input
         value={quantity}
         onChange={(event) => setQuantity(event.currentTarget.value)}
       />
-      <button
-        formAction={async () =>
-          await createOrUpdateCookie(props.productId, quantity)
-        }
-      >
+      <button formAction={async () => await createCookie(quantity)}>
         Add Quantity
       </button>
     </form>

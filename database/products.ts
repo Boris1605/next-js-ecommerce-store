@@ -40,15 +40,31 @@ type Product = {
   currency: string;
 };
 
-export const getProductsInsecure = cache(async () => {
-  const [products] = await sql<Product[]>`
-    SELECT
-      *
-    FROM
-      products
-  `;
+// export const getProductsInsecure = cache(async () => {
+//   const [products] = await sql<Product[]>`
+//     SELECT
+//       *
+//     FROM
+//       products
+//   `;
 
-  return products;
+//   return products;
+// });
+
+export const getProductsInsecure = cache(async () => {
+  try {
+    const products = await sql<Product[]>`
+      SELECT
+        *
+      FROM
+        products
+    `;
+
+    return Array.isArray(products) ? products : [];
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    return [];
+  }
 });
 
 export const getProductInsecure = cache(async (id: number) => {
@@ -56,7 +72,7 @@ export const getProductInsecure = cache(async (id: number) => {
     SELECT
       *
     FROM
-      animals
+      products
     WHERE
       id = ${id}
   `;
