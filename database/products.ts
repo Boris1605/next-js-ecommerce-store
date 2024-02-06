@@ -1,5 +1,6 @@
 import { cache } from 'react';
 import { sql } from './connect';
+import { Product } from '../migrations/00000-createTableProducts';
 
 // const products = [
 //   {
@@ -32,14 +33,6 @@ import { sql } from './connect';
 //   },
 // ];
 
-type Product = {
-  id: number;
-  name: string;
-  type: string;
-  price: number;
-  currency: string;
-};
-
 // export const getProductsInsecure = cache(async () => {
 //   const [products] = await sql<Product[]>`
 //     SELECT
@@ -52,19 +45,14 @@ type Product = {
 // });
 
 export const getProductsInsecure = cache(async () => {
-  try {
-    const products = await sql<Product[]>`
-      SELECT
-        *
-      FROM
-        products
-    `;
+  const products = await sql<Product[]>`
+    SELECT
+      *
+    FROM
+      products
+  `;
 
-    return Array.isArray(products) ? products : [];
-  } catch (error) {
-    console.error('Error fetching products:', error);
-    return [];
-  }
+  return products;
 });
 
 export const getProductInsecure = cache(async (id: number) => {
