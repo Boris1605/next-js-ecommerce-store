@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
-import './globals.scss';
 import { ReactNode } from 'react';
+import './globals.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <Link href="/">Home</Link>
               <Link href="/about">About</Link>
               <Link href="/products">Products</Link>
-              {/* <Link href="/cart">Cart</Link> */}
+              <Link href="/cart">Cart</Link>
             </nav>
           </div>
         </header>

@@ -20,6 +20,5 @@ export async function createCookie(productId, quantity) {
   } else {
     productToAdd.quantity = quantity;
   }
-  console.log('ProductQuantitys: ', productQuantitys);
   await cookies().set('productQuantitys', JSON.stringify(productQuantitys));
 }

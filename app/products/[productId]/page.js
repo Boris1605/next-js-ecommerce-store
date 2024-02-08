@@ -28,7 +28,7 @@ export default async function ProductPage(props) {
         data-test-id="product-image"
       />
       <p data-test-id="product-price">Product Price</p>
-      {/* <input data-test-id="product-quantity" /> */}
+      <input data-test-id="product-quantity" />
       <Button
         data-test-id="product-add-to-cart"
         productId={singleProduct.id}
