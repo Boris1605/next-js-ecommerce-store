@@ -19,5 +19,5 @@ VALUES
 CREATE DATABASE ecommerce_migration;
 CREATE USER ecommerce_migration WITH ENCRYPTED PASSWORD 'ecommerce_migration';
 GRANT ALL PRIVILEGES ON DATABASE ecommerce_migration TO ecommerce_migration;
-\connect ecommerce_migration;
+\connect ecommerce_migration
 CREATE SCHEMA ecommerce_migration AUTHORIZATION ecommerce_migration;

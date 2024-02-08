@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-// import Button from '../../../app/Button';
+import Button from '../../../app/Button';
 import { getProductInsecure } from '../../../database/products';
 
 export async function generateMetadata(props) {
@@ -29,7 +29,11 @@ export default async function ProductPage(props) {
       />
       <p data-test-id="product-price">Product Price</p>
       {/* <input data-test-id="product-quantity" /> */}
-      {/* <Button data-test-id="product-add-to-cart" /> */}
+      <Button
+        data-test-id="product-add-to-cart"
+        productId={singleProduct.id}
+        quantity={2} // TODO: inputfield number of quantitiy for user
+      />
     </div>
   );
 }
