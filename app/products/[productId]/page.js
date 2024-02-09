@@ -23,7 +23,7 @@ export default async function ProductPage(props) {
       <Image
         src={`/images/${singleProduct.name.toLowerCase()}.webp`}
         alt={singleProduct.name}
-        width={300}
+        width={200}
         height={200}
         data-test-id="product-image"
       />
@@ -32,7 +32,7 @@ export default async function ProductPage(props) {
       <Button
         data-test-id="product-add-to-cart"
         productId={singleProduct.id}
-        quantity={2} // TODO: input field number of quantity for user
+        quantity={1}
       />
     </div>
   );

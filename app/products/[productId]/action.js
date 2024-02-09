@@ -21,7 +21,7 @@ export async function createCookie(productId, quantity) {
   );
 
   if (existingProductId !== -1) {
-    productQuantities[existingProductId].quantity *= quantity;
+    productQuantities[existingProductId].quantity += quantity;
   } else {
     productQuantities.push({ id: productId, quantity });
   }
