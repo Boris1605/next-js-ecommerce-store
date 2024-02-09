@@ -28,11 +28,11 @@ export default async function ProductPage(props) {
         data-test-id="product-image"
       />
       <p data-test-id="product-price">Product Price</p>
-      <input data-test-id="product-quantity" />
+      <input type="number" data-test-id="product-quantity" />
       <Button
         data-test-id="product-add-to-cart"
         productId={singleProduct.id}
-        quantity={2} // TODO: inputfield number of quantitiy for user
+        quantity={2} // TODO: input field number of quantity for user
       />
     </div>
   );

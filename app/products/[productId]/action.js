@@ -5,20 +5,31 @@ import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 
 export async function createCookie(productId, quantity) {
-  const productsQuantityCookie = getCookie('productQuantitys');
+  const productsQuantityCookie = getCookie('productQuantities');
 
-  const productQuantitys = !productsQuantityCookie
+  const productQuantities = !productsQuantityCookie
     ? []
     : parseJson(productsQuantityCookie);
 
-  const productToAdd = productQuantitys.find((productQuantity) => {
-    return productQuantity.id === productId;
-  });
+  // const productToAdd = productQuantities.find((productQuantity) => {
+  //   return productQuantity.id === productId;
+  // });
 
-  if (!productToAdd) {
-    productQuantitys.push({ id: productId, quantity: quantity });
+  // Testing:
+  const existingProductId = productQuantities.findIndex(
+    (productQuantity) => productQuantity.id === productId,
+  );
+
+  if (existingProductId !== -1) {
+    productQuantities[existingProductId].quantity *= quantity;
   } else {
-    productToAdd.quantity = quantity;
+    productQuantities.push({ id: productId, quantity });
   }
-  await cookies().set('productQuantitys', JSON.stringify(productQuantitys));
+
+  // if (!productToAdd) {
+  //   productQuantities.push({ id: productId, quantity: quantity });
+  // } else {
+  //   productToAdd.quantity = quantity;
+  // }
+  await cookies().set('productQuantities', JSON.stringify(productQuantities));
 }
