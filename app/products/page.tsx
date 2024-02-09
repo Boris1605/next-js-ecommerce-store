@@ -57,7 +57,7 @@ export default async function ProductsPage() {
               <div>{product.name}</div>
               <Image
                 src={`/images/${product.name.toLowerCase()}.webp`}
-                width={300}
+                width={200}
                 height={200}
                 alt={product.name}
               />
