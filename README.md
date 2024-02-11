@@ -126,34 +126,26 @@ sudo -u <user name> psql -U <user name> <database name>
 10. Change your `next.config.js` as in the lecture: disable linting and type checking on build, since this happens earlier in the GitHub Actions deploy workflow.
 11. Add database credentials using Fly.io secrets, randomly generating the database name, username, and password:
 
-```
-
+```bash
 flyctl secrets set PGHOST=localhost PGDATABASE=$(openssl rand -hex 16) PGUSERNAME=$(openssl rand -hex 16) PGPASSWORD=$(openssl rand -base64 32)
-
 ```
 
 12. If your app needs any additional environment variables such as API keys, also add them to the secrets using the following pattern:
 
-```
-
+```bash
 flyctl secrets set <secret name>=<secret value>
-
 ```
 
 13. Create a 1GB volume for the PostgreSQL database in the Bucharest region (slower region IDs: Amsterdam ams or Warsaw waw):
 
-```
-
+```bash
 flyctl volumes create postgres --size 1 --region otp
-
 ```
 
 14. Deploy the app - this will result in an error message in the logs and a hanging server:
 
-```
-
+```bash
 flyctl deploy
-
 ```
 
 15. SSH into the Fly.io machine and set up PostgreSQL:
@@ -173,13 +165,13 @@ su postgres -c "/app/scripts/alpine-postgresql-setup-and-start.sh"
 
 16. Deploy the app again:
 
-```
+```bash
 flyctl deploy
 ```
 
 17. You may receive a "failed to fetch an image or build from source" error during deployment:
 
-```
+```bash
 Error failed to fetch an image or build from source: error building: executor failed running [/bin/sh -c yarn build]: exit code: 1
 ```
 
