@@ -12,7 +12,7 @@ This project is an E-Commerce store built using Next.js. It allows users to brow
 - PostgreSQL
 - Jest
 - Playwright
-- [Fly.io] (https://fly.io/) (for deployment)
+- [Fly.io](https://fly.io/) (for deployment)
 
 ## Screenshots
 
@@ -176,3 +176,17 @@ Error failed to fetch an image or build from source: error building: executor fa
 ```
 
 18. Deploys may fail for a number of reasons, to find the real error message you will need to scroll up in the logs and find the first line that looks like an error.
+
+## Dependencies
+
+- ley
+- dotenv-safe
+- next
+- postgres
+- react
+- react-dom
+- sass
+- secure-json-parse
+- server-only
+- sharp
+- tsx
