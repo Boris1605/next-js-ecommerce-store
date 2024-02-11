@@ -1,5 +1,6 @@
 import { Sql } from 'postgres';
 
+// Array containing product data to be inserted
 const products = [
   {
     id: 1,
@@ -32,6 +33,7 @@ const products = [
 ];
 
 export async function up(sql: Sql) {
+  // Iterating through each product and inserting it into the products
   for (const product of products) {
     await sql`
       INSERT INTO
@@ -48,6 +50,7 @@ export async function up(sql: Sql) {
 }
 
 export async function down(sql: Sql) {
+  // Iterating through each product and deleting it from the products table
   for (const product of products) {
     await sql`
       DELETE FROM products

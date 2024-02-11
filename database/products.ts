@@ -44,7 +44,9 @@ import { sql } from './connect';
 //   return products;
 // });
 
+// Function to get products from the database (insecure version)
 export const getProductsInsecure = cache(async () => {
+  // Executing SQL query to select all products from the database
   const products = await sql<Product[]>`
     SELECT
       *
@@ -52,7 +54,7 @@ export const getProductsInsecure = cache(async () => {
       products
   `;
 
-  return products;
+  return products; // Returning the list of products
 });
 
 // export const createProductInsecure = cache(
@@ -76,7 +78,9 @@ export const getProductsInsecure = cache(async () => {
 //   },
 // );
 
+// Function to get a single product from the database by its ID (insecure version)
 export const getProductInsecure = cache(async (id: number) => {
+  // Executing SQL query to select a single product by its ID from the database
   const [product] = await sql<Product[]>`
     SELECT
       *
@@ -86,10 +90,12 @@ export const getProductInsecure = cache(async (id: number) => {
       id = ${id}
   `;
 
-  return product;
+  return product; // Returning the selected product
 });
 
+// Function to update a product in the database (insecure version)
 export const updateProductInsecure = cache(async (updatedProduct: Product) => {
+  // Executing SQL query to update a product in the database
   const [product] = await sql<Product[]>`
     UPDATE products
     SET
@@ -103,10 +109,12 @@ export const updateProductInsecure = cache(async (updatedProduct: Product) => {
       products.*
   `;
 
-  return product;
+  return product; // Returning the updated product
 });
 
+// Function to delete a product from the database (insecure version)
 export const deleteProductInsecure = cache(async (id: number) => {
+  // Executing SQL query to delete a product from the database
   const [product] = await sql<Product[]>`
     DELETE FROM products
     WHERE
@@ -115,5 +123,5 @@ export const deleteProductInsecure = cache(async (id: number) => {
       products.*
   `;
 
-  return product;
+  return product; // Returning the deleted product
 });
