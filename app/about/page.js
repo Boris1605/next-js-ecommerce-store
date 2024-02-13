@@ -1,5 +1,4 @@
 // import { parseJson } from '../../util/json';
-import Head from 'next/head';
 
 // Metadata for the About page
 export const metadata = {
@@ -11,13 +10,6 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div>
-      <Head>
-        <title>About</title>
-        <meta
-          name="description"
-          content="Learn more about our ecommerce store."
-        />
-      </Head>
       <h1>About us</h1>
       <div>Here you can buy Smart Gadgets</div>
     </div>
