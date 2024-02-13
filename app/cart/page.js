@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getProductsInsecure } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+// import totalPrice from './totalPrice';
 
 export const metadata = {
   default: 'Cart Page',
@@ -30,6 +31,8 @@ export default async function CartPage() {
   //   useRouter.push('/checkout');
   // };
 
+  // const price = totalPrice();
+
   return (
     <div>
       <h1>Cart Page</h1>
@@ -46,8 +49,9 @@ export default async function CartPage() {
           </div>
         );
       })}
+      {/* <div data-test-id="cart-total">Total Price is: {`${price} €`}</div> */}
       {/* <button>Checkout</button> */}
-      <button>Checkout</button>
+      <button data-test-id="cart-checkout">Checkout</button>
     </div>
   );
 }
