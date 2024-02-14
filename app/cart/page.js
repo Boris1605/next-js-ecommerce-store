@@ -1,9 +1,8 @@
 import Link from 'next/link';
-// import { useRouter } from 'next/navigation';
 import { getProductsInsecure } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
-// import totalPrice from './totalPrice';
+import RemoveFromCartButton from './_RemoveFromCartButton';
 
 export const metadata = {
   default: 'Cart Page',
@@ -14,44 +13,46 @@ export default async function CartPage() {
   const products = await getProductsInsecure();
 
   const productsQuantityCookie = getCookie('productQuantities');
-
   const productQuantities = !productsQuantityCookie
     ? []
     : parseJson(productsQuantityCookie);
 
   const productsWithQuantity = products.map((product) => {
-    const matchingWithProductFromCookie = productQuantities.find(
+    const productWithCookie = productQuantities.find(
       (productObject) => product.id === productObject.id,
     );
-    return { ...product, quantity: matchingWithProductFromCookie?.quantity };
+    return { ...product, quantity: productWithCookie?.quantity };
   });
 
-  // const handleCheckout = () => {
-  //   // Navigate to the checkout page
-  //   useRouter.push('/checkout');
-  // };
+  const productsCart = productsWithQuantity.filter(
+    (product) => product.quantity,
+  );
 
-  // const price = totalPrice();
+  const totalPrice = productsCart.reduce(
+    (acc, product) => acc + product.price * product.quantity,
+    0,
+  );
 
   return (
     <div>
-      <h1>Cart Page</h1>
-      {productsWithQuantity.map((product) => {
-        return (
-          <div key={`product-id-${product.id}`}>
-            <Link href={`/products/${product.id}`}>
-              <h2>
-                {product.icon} {product.name}
-              </h2>
-            </Link>
-            <div>{product.quantity}</div>
-            <button>Remove From Cart</button>
-          </div>
-        );
-      })}
-      {/* <div data-test-id="cart-total">Total Price is: {`${price} €`}</div> */}
-      {/* <button>Checkout</button> */}
-      <button data-test-id="cart-checkout">Checkout</button>
+      <div>
+        <h1>Cart Total:</h1>
+      </div>
+      <div>
+        {productsCart.map((product) => {
+          return (
+            <div key={`product-id-${product.id}`}>
+              <Link href={`/products/${product.id}`} />
+              <h2>{product.name}</h2>
+              <RemoveFromCartButton>Remove from cart</RemoveFromCartButton>
+            </div>
+          );
+        })}
+        <div data-test-id="total-price">Total Price: € {totalPrice}</div>
+        <Link href="/checkout" type="button">
+          Checkout
+        </Link>
+      </div>
     </div>
   );
 }

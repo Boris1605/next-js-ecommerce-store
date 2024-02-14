@@ -14,22 +14,28 @@ export async function createCookie(productId, quantity) {
     ? []
     : parseJson(productsQuantityCookie);
 
-  // const productToAdd = productQuantities.find((productQuantity) => {
-  //   return productQuantity.id === productId;
-  // });
+  const productToAdd = productQuantities.find((productQuantity) => {
+    return productQuantity.id === productId;
+  });
+
+  if (!productToAdd) {
+    productQuantities.push({ id: productId, quantity: quantity });
+  } else {
+    productToAdd.quantity = quantity;
+  }
 
   // Finding the index of the existing product in the product quantities array
-  const existingProductId = productQuantities.findIndex(
-    (productQuantity) => productQuantity.id === productId,
-  );
+  // const existingProductId = productQuantities.findIndex(
+  //   (productQuantity) => productQuantity.id === productId,
+  // );
 
   // If the product already exists in the product quantities array, update its quantity
-  if (existingProductId !== -1) {
-    productQuantities[existingProductId].quantity += quantity;
-  } else {
-    // If the product doesn't exist in the product quantities array, add it with the specified quantity
-    productQuantities.push({ id: productId, quantity });
-  }
+  // if (existingProductId !== -1) {
+  //   productQuantities[existingProductId].quantity += quantity;
+  // } else {
+  //   // If the product doesn't exist in the product quantities array, add it with the specified quantity
+  //   productQuantities.push({ id: productId, quantity });
+  // }
 
   // if (!productToAdd) {
   //   productQuantities.push({ id: productId, quantity: quantity });

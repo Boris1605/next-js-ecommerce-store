@@ -22,8 +22,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <nav>
               <Link href="/">Home</Link>
               <Link href="/products">Products</Link>
-              <Link href="/cart">Cart</Link>
               <Link href="/about">About</Link>
+              <Link href="/cart">Cart</Link>
             </nav>
           </div>
         </header>
