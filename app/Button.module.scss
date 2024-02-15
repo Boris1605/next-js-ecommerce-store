@@ -1,42 +1,73 @@
+// .button {
+//   display: inline-block;
+//   padding: 0.75rem 1.25rem;
+//   // border-radius: 15rem;
+//   text-transform: uppercase;
+//   font-size: 1rem;
+//   letter-spacing: 0.1rem;
+//     transition: all 0.3s;
+//     position: relative;
+//     overflow: hidden;
+//     z-index: 1;
+//     &:after {
+//       content: '';
+//       position: absolute;
+//       bottom: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 100%;
+//       // background-color: $color;
+//       border-radius: 10rem;
+//       z-index: -2;
+//     }
+//     &:before {
+//       content: '';
+//       position: absolute;
+//       bottom: 0;
+//       left: 0;
+//       width: 0%;
+//       height: 100%;
+//       // background-color: color.adjust($color, 15%);
+//       transition: all 0.3s;
+//       border-radius: 10rem;
+//       z-index: -1;
+//     }
+//     &:hover {
+//       color: #fff;
+//       &:before {
+//         width: 100%;
+//       }
+//     }
+// }
+
 .button {
   display: inline-block;
-  padding: 0.75rem 1.25rem;
-  border-radius: 10rem;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 1rem;
-  letter-spacing: 0.15rem;
-  transition: all 0.3s;
+  padding: 0.7em 1.7em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  background-color: #3369ff;
+  box-shadow:
+    inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+  text-align: center;
   position: relative;
-  overflow: hidden;
-  z-index: 1;
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    // background-color: $color;
-    border-radius: 10rem;
-    z-index: -2;
-  }
-  &:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    // background-color: color.adjust($color, 15%);
-    transition: all 0.3s;
-    border-radius: 10rem;
-    z-index: -1;
-  }
-  &:hover {
-    color: #fff;
-    &:before {
-      width: 100%;
-    }
+}
+
+.button:active {
+  box-shadow:
+    inset 0 0.6em 2em -0.3em rgba(0, 0, 0, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+}
+
+@media all and (max-width: 30em) {
+  .button {
+    display: block;
+    margin: 0.4em auto;
   }
 }

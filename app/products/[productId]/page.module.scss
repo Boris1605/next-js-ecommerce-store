@@ -1,0 +1,15 @@
+.main {
+  // display: flex;
+  // flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  padding-top: 50px;
+  // margin-top: 50px;
+}

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ReactNode } from 'react';
 import CookieBanner from './CookieBanner';
 import './globals.scss';
+import styles from './layout.module.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,13 +23,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <header>
           <div>
             <CookieBanner />
-            <nav>
-              <Image
-                src="/logoimage/logo.webp"
-                alt="Logo"
-                width={50}
-                height={50}
-              />
+            <nav className={styles.navbar}>
+              <Link href="/">
+                <Image
+                  className={styles.logo}
+                  src="/logoimage/logo.webp"
+                  alt="Logo"
+                  width={50}
+                  height={50}
+                />
+              </Link>
               <Link href="/">Home</Link>
               <Link href="/products">Products</Link>
               <Link href="/about">About</Link>

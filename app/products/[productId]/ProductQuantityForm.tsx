@@ -22,7 +22,7 @@ export default function ProductQuantityForm() {
         formAction={async () => await createCookie(quantity)}
         data-test-id="product-add-cart"
       >
-        Add Quantity
+        Add to cart
       </button>
     </form>
   );
