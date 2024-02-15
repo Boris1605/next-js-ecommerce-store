@@ -36,9 +36,9 @@ export default async function CartPage() {
   );
 
   return (
-    <div>
+    <div className={styles.main}>
       <div>
-        <h1 className={styles.title}>Cart Total:</h1>
+        <h1>Cart Total:</h1>
       </div>
       <div>
         {productsCart.map((product) => {
@@ -52,7 +52,7 @@ export default async function CartPage() {
                   width={80}
                   height={80}
                 /> */}
-                <h3>{product.name}</h3>
+                <h3 className={styles.text}>{product.name}</h3>
                 <button className={styles.removeButton}>
                   Remove from cart
                 </button>
