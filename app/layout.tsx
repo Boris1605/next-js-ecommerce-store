@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import { ReactNode } from 'react';
+import CookieBanner from './CookieBanner';
 import './globals.scss';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className={inter.className}>
         <header>
           <div>
+            <CookieBanner />
             <nav>
               <Link href="/">Home</Link>
               <Link href="/products">Products</Link>
