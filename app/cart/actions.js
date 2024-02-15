@@ -5,7 +5,7 @@ import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 
 export default async function RemoveProduct(product) {
-  const productsQuantityCookie = getCookie('productQuantities');
+  const productsQuantityCookie = getCookie('cart');
   const productQuantities = !productsQuantityCookie
     ? []
     : parseJson(productsQuantityCookie);
@@ -14,5 +14,5 @@ export default async function RemoveProduct(product) {
     return product.id !== productQuantity.id;
   });
 
-  await cookies().set('productQuantities', JSON.stringify(removeProduct));
+  await cookies().set('cart', JSON.stringify(removeProduct));
 }

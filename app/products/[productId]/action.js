@@ -7,7 +7,7 @@ import { parseJson } from '../../../util/json';
 // Function to create/update a cookie for product quantities
 export async function createCookie(productId, quantity) {
   // Retrieving the existing product quantities cookie
-  const productsQuantityCookie = getCookie('productQuantities');
+  const productsQuantityCookie = getCookie('cart');
 
   // Parsing the product quantities cookie as JSON, or initializing an empty array if the cookie doesn't exist
   const productQuantities = !productsQuantityCookie
@@ -44,5 +44,5 @@ export async function createCookie(productId, quantity) {
   // }
 
   // Setting the updated product quantities as a cookie
-  await cookies().set('productQuantities', JSON.stringify(productQuantities));
+  await cookies().set('cart', JSON.stringify(productQuantities));
 }

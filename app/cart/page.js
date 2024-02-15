@@ -14,7 +14,7 @@ export const metadata = {
 export default async function CartPage() {
   const products = await getProductsInsecure();
 
-  const productsQuantityCookie = getCookie('productQuantities');
+  const productsQuantityCookie = getCookie('cart');
   const productQuantities = !productsQuantityCookie
     ? []
     : parseJson(productsQuantityCookie);
