@@ -39,42 +39,44 @@ export default async function CartPage() {
   );
 
   return (
-    <div className={styles.main}>
-      <div>
-        <h1>Cart Total:</h1>
-      </div>
-      <div>
-        {productsCart.map((product) => {
-          return (
-            <div
-              key={`product-id-${product.id}`}
-              data-test-id={`cart-product-${product.id}`}
-            >
-              <Link href={`/products/${product.id}`} />
-              <div>
-                {/* <img
+    <main>
+      <div className={styles.main}>
+        <div>
+          <h1>Cart Total:</h1>
+        </div>
+        <div>
+          {productsCart.map((product) => {
+            return (
+              <div
+                key={`product-id-${product.id}`}
+                data-test-id={`cart-product-${product.id}`}
+              >
+                <Link href={`/products/${product.id}`} />
+                <div>
+                  {/* <img
                   src={`/images/${product.name.toLowerCase()}.webp`}
                   alt={product.name}
                   width={80}
                   height={80}
                 /> */}
-                <h3 className={styles.text}>
-                  {product.name} ({product.quantity})
-                </h3>
-                <p>Sub total: €{product.quantity * product.price}</p>
-                <RemoveFromCartButton product={product} />
-                <ReduceQuantityButton product={product} />
+                  <h3 className={styles.text}>
+                    {product.name} ({product.quantity})
+                  </h3>
+                  <p>Sub total: €{product.quantity * product.price}</p>
+                  <RemoveFromCartButton product={product} />
+                  <ReduceQuantityButton product={product} />
+                </div>
               </div>
-            </div>
-          );
-        })}
-        <div data-test-id="total-price">
-          Total Price: €{totalPrice.toFixed(2)}
+            );
+          })}
+          <div data-test-id="total-price">
+            Total Price: €{totalPrice.toFixed(2)}
+          </div>
+          <Link href="/checkout" type="button">
+            Checkout
+          </Link>
         </div>
-        <Link href="/checkout" type="button">
-          Checkout
-        </Link>
       </div>
-    </div>
+    </main>
   );
 }

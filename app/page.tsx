@@ -5,9 +5,11 @@ import styles from './page.module.scss';
 
 export default function Home() {
   return (
-    <div className={styles.main}>
-      <h1>Smart gadgets</h1>
-      <p>Welcome to buy now today and safe money!</p>
-    </div>
+    <main>
+      <div className={styles.main}>
+        <h1>Welcome to our Smart gadgets store</h1>
+        <p>Here is the right place to find cool gadgets and safe money!</p>
+      </div>
+    </main>
   );
 }

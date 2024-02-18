@@ -33,29 +33,31 @@ export default async function ProductPage(props) {
   // })
 
   return (
-    <div>
-      <div className={styles.main}>
-        <h1 className={styles.title}>Product: {singleProduct.name}</h1>
-        <Image
-          src={`/images/${singleProduct.name.toLowerCase()}.webp`}
-          alt={singleProduct.name}
-          width={200}
-          height={200}
-          data-test-id="product-image"
-        />
-        <p data-test-id="product-price">{singleProduct.price}</p>
-        <ProductQuantityForm
-          type="number"
-          data-test-id="product-quantity"
-          productId={singleProduct.id}
-        />
-        {/* <Button
+    <main>
+      <div>
+        <div className={styles.main}>
+          <h1 className={styles.title}>Product: {singleProduct.name}</h1>
+          <Image
+            src={`/images/${singleProduct.name.toLowerCase()}.webp`}
+            alt={singleProduct.name}
+            width={200}
+            height={200}
+            data-test-id="product-image"
+          />
+          <p data-test-id="product-price">{singleProduct.price}</p>
+          <ProductQuantityForm
+            type="number"
+            data-test-id="product-quantity"
+            productId={singleProduct.id}
+          />
+          {/* <Button
           data-test-id="product-add-to-cart"
           productId={singleProduct.id}
           // fixing:
           quantity={quantity}
         /> */}
+        </div>
       </div>
-    </div>
+    </main>
   );
 }

@@ -68,7 +68,20 @@ export default async function RootLayout({
           </div>
         </header>
         <main>{children}</main>
-        <footer>Footer</footer>
+        <footer>
+          <hr />
+          <div>
+            <div>
+              <p>Address: 803 N. Willow Avenue Brooklyn, NY 11236</p>
+              <p>Phone: +1 845-621-5572</p>
+              <p>Email: info@smartgadgets.com</p>
+            </div>
+
+            <div>
+              Copyright © 2024 Smart gadgets store. All rights reserved.
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );
