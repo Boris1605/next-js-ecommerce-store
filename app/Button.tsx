@@ -7,6 +7,7 @@ import { createCookie } from './products/[productId]/action';
 
 // Defining the Props type for the Button component
 type Props = {
+  // 'data-test-id': string;
   productId: number;
   quantity: number;
 };

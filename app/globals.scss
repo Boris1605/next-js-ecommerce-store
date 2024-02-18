@@ -6,7 +6,7 @@
 nav {
   width: 100vw;
   height: 4rem;
-  background: var(--color-layout);
+  background: rgb(230, 215, 215);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -23,8 +23,14 @@ nav {
 }
 
 button {
-  font-size: 0.875rem;
-  border-radius: 6px;
-  padding: 0.5rem;
+  //   font-size: 0.875rem;
+  //   border-radius: 6px;
+  //   padding: 0.5rem;
   cursor: pointer;
+}
+
+footer {
+  background-color: rgb(230, 215, 215);
+  bottom: 0;
+  align-items: center;
 }

@@ -7,6 +7,7 @@ export default function Home() {
   return (
     <div className={styles.main}>
       <h1>Smart gadgets</h1>
+      <p>Welcome to buy now today and safe money!</p>
     </div>
   );
 }
