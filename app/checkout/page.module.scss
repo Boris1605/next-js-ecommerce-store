@@ -1,0 +1,13 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label {
+    margin: 8px;
+
+    input {
+      margin-left: 8px;
+    }
+  }
+}
