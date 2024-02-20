@@ -14,7 +14,7 @@ export default function RemoveFromCartButton({ product }) {
     <div>
       <button
         onClick={removeProduct}
-        data-test-id={`cart-product-remove-${product.id}`}
+        data-test-id={`cart-product-remove-${Number(product.id)}`}
       >
         Remove from cart
       </button>

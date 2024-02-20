@@ -38,8 +38,9 @@ export default async function ProductPage(props) {
         <div className={styles.main}>
           <h1 className={styles.title}>Product: {singleProduct.name}</h1>
           <Image
-            src={`/images/${singleProduct.name.toLowerCase()}.webp`}
-            alt={singleProduct.name}
+            // src={`/images/${singleProduct.name.toLowerCase()}.webp`}
+            src={singleProduct?.image}
+            alt={singleProduct?.name}
             width={200}
             height={200}
             data-test-id="product-image"

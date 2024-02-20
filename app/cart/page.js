@@ -48,10 +48,10 @@ export default async function CartPage() {
           {productsCart.map((product) => {
             return (
               <div
-                key={`product-id-${product.id}`}
-                data-test-id={`cart-product-${product.id}`}
+                key={`product-id-${Number(product.id)}`}
+                data-test-id={`cart-product-${Number(product.id)}`}
               >
-                <Link href={`/products/${product.id}`} />
+                <Link href={`/products/${Number(product.id)}`} />
                 <div>
                   {/* <img
                   src={`/images/${product.name.toLowerCase()}.webp`}
@@ -61,7 +61,7 @@ export default async function CartPage() {
                 /> */}
                   <h3
                     className={styles.text}
-                    data-test-id={`cart-product-quantity-${product.id}`}
+                    data-test-id={`cart-product-quantity-${Number(product.id)}`}
                   >
                     {product.name} ({product.quantity})
                   </h3>

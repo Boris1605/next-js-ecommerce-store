@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProductsInsecure } from '../../database/products';
+import { Product } from '../../migrations/00000-createTableProducts';
 import styles from './page.module.scss';
 
 export const metadata = {
@@ -18,7 +19,7 @@ export default async function ProductsPage() {
       <div>
         <h1 data-test-id="products-page-title">Products you can buy:</h1>
         <div className={styles.gridOfProducts}>
-          {products.map((product) => {
+          {products.map((product: Product) => {
             return (
               // Mapping through each product to render its details
               <div
