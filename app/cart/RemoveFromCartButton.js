@@ -12,7 +12,12 @@ export default function RemoveFromCartButton({ product }) {
 
   return (
     <div>
-      <button onClick={removeProduct}>Remove from cart</button>
+      <button
+        onClick={removeProduct}
+        data-test-id={`cart-product-remove-${product.id}`}
+      >
+        Remove from cart
+      </button>
     </div>
   );
 }

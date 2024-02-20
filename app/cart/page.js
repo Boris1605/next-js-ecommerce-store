@@ -72,7 +72,7 @@ export default async function CartPage() {
           <div data-test-id="total-price">
             Total Price: €{totalPrice.toFixed(2)}
           </div>
-          <Link href="/checkout" type="button">
+          <Link href="/checkout" type="button" data-test-id="cart-checkout">
             Checkout
           </Link>
         </div>
