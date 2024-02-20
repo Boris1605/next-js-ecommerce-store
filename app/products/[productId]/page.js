@@ -24,11 +24,11 @@ export default async function ProductPage(props) {
     notFound();
   }
 
-  // const productQuantities = !productsQuantitiyCookie
+  // const productQuantities = !productsQuantityCookie
   //   ? []
   //   : parseJson(productsQuantityCookie);
 
-  // const quantitiesDisplay = producQuantities.find((product) => {
+  // const quantitiesDisplay = productQuantities.find((product) => {
   //   return product.id === singleProduct.id
   // })
 

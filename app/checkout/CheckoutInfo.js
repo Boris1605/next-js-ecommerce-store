@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { removeCookie } from './action';
 import styles from './page.module.scss';
 
 export default function CheckoutInfo() {
@@ -122,7 +123,10 @@ export default function CheckoutInfo() {
       <button
         data-test-id="checkout-confirm-order"
         type="button"
-        onClick={() => router.push('/checkout/thankyou')}
+        onClick={async () => {
+          await removeCookie();
+          router.push('/checkout/thankyou');
+        }}
       >
         Confirm Order
       </button>

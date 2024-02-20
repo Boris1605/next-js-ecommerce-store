@@ -52,7 +52,7 @@ export default async function RootLayout({
               <Link href="/">
                 <Image
                   className={styles.logo}
-                  src="/logoimage/logo.webp"
+                  src="/logo_image/logo.webp"
                   alt="Logo"
                   width={50}
                   height={50}
