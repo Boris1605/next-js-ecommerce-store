@@ -2,10 +2,7 @@ import Link from 'next/link';
 import { getProductsInsecure } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
-// import RemoveFromCartButton from './_RemoveFromCartButton';
-// import Image from 'next/image';
 import RemoveFromCartButton from './RemoveFromCartButton';
-// import { handleRemoveProduct } from './actions';
 import styles from './page.module.scss';
 import ReduceQuantityButton from './ReduceQuantityButton';
 

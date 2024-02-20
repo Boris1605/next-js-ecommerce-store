@@ -1,10 +1,8 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-// import Button from '../../../app/Button';
 import { getProductInsecure } from '../../../database/products';
 import ProductQuantityForm from './ProductQuantityForm';
 import styles from './page.module.scss';
-// import { parseJson } from '../../../util/json';
 
 export async function generateMetadata(props) {
   const singleProduct = await getProductInsecure(props.params.productId);
@@ -24,22 +22,14 @@ export default async function ProductPage(props) {
     notFound();
   }
 
-  // const productQuantities = !productsQuantityCookie
-  //   ? []
-  //   : parseJson(productsQuantityCookie);
-
-  // const quantitiesDisplay = productQuantities.find((product) => {
-  //   return product.id === singleProduct.id
-  // })
-
   return (
     <main>
       <div>
         <div className={styles.main}>
           <h1 className={styles.title}>Product: {singleProduct.name}</h1>
           <Image
-            // src={`/images/${singleProduct.name.toLowerCase()}.webp`}
-            src={singleProduct?.image}
+            src={`/images/${singleProduct.name.toLowerCase()}.webp`}
+            // src={singleProduct?.image}
             alt={singleProduct?.name}
             width={200}
             height={200}
@@ -51,12 +41,6 @@ export default async function ProductPage(props) {
             data-test-id="product-quantity"
             productId={singleProduct.id}
           />
-          {/* <Button
-          data-test-id="product-add-to-cart"
-          productId={singleProduct.id}
-          // fixing:
-          quantity={quantity}
-        /> */}
         </div>
       </div>
     </main>

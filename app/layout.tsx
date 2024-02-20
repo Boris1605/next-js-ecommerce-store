@@ -32,16 +32,17 @@ export default async function RootLayout({
     ? []
     : parseJson(productsQuantityCookie);
 
-  const productsWithQuantity = products.map((product) => {
+  const productsWithQuantity = products.map((product: Product) => {
     const productWithCookie = productQuantities.find(
       (productObject: Product) => product.id === productObject.id,
     );
+    // const quantity = productWithCookie?.quantity || 0;
     return { ...product, quantity: productWithCookie?.quantity };
   });
 
   const productsCart = productsWithQuantity
-    .filter((product) => product.quantity)
-    .reduce((total, product) => total + product.quantity, 0);
+    .filter((product: Product) => product.quantity)
+    .reduce((total: number, product: Product) => total + product.quantity, 0);
   return (
     <html lang="en">
       <body className={inter.className}>
