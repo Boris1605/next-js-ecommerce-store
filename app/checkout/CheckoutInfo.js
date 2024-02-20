@@ -26,7 +26,7 @@ export default function CheckoutInfo() {
           data-test-id="checkout-first-name"
           placeholder="First name"
           value={firstName}
-          onChange={(e) => setFirstName(e.currentTarget.value)}
+          onChange={(event) => setFirstName(event.currentTarget.value)}
           required
         />
       </label>
@@ -36,7 +36,7 @@ export default function CheckoutInfo() {
           data-test-id="checkout-last-name"
           placeholder="Last name"
           value={lastName}
-          onChange={(e) => setLastName(e.currentTarget.value)}
+          onChange={(event) => setLastName(event.currentTarget.value)}
           required
         />
       </label>
@@ -46,7 +46,7 @@ export default function CheckoutInfo() {
           data-test-id="checkout-email"
           placeholder="Email"
           value={email}
-          onChange={(e) => setEmail(e.currentTarget.value)}
+          onChange={(event) => setEmail(event.currentTarget.value)}
           required
         />
       </label>
@@ -56,7 +56,7 @@ export default function CheckoutInfo() {
           data-test-id="checkout-address"
           placeholder="Address"
           value={address}
-          onChange={(e) => setAddress(e.currentTarget.value)}
+          onChange={(event) => setAddress(event.currentTarget.value)}
           required
         />
       </label>
@@ -66,7 +66,7 @@ export default function CheckoutInfo() {
           data-test-id="checkout-city"
           placeholder="City"
           value={city}
-          onChange={(e) => setCity(e.currentTarget.value)}
+          onChange={(event) => setCity(event.currentTarget.value)}
           required
         />
       </label>
@@ -76,7 +76,7 @@ export default function CheckoutInfo() {
           data-test-id="checkout-postal-code"
           placeholder="Postal code"
           value={postalCode}
-          onChange={(e) => setPostalCode(e.currentTarget.value)}
+          onChange={(event) => setPostalCode(event.currentTarget.value)}
           required
         />
       </label>
@@ -86,7 +86,7 @@ export default function CheckoutInfo() {
           data-test-id="checkout-country"
           placeholder="Country"
           value={country}
-          onChange={(e) => setCountry(e.currentTarget.value)}
+          onChange={(event) => setCountry(event.currentTarget.value)}
           required
         />
       </label>
@@ -96,7 +96,7 @@ export default function CheckoutInfo() {
           data-test-id="checkout-credit-card"
           placeholder="Credit card"
           value={creditCard}
-          onChange={(e) => setCreditCard(e.currentTarget.value)}
+          onChange={(event) => setCreditCard(event.currentTarget.value)}
           required
         />
         <label>
@@ -105,7 +105,7 @@ export default function CheckoutInfo() {
             data-test-id="checkout-expiration-date"
             placeholder="Expiration date"
             value={expDate}
-            onChange={(e) => setExpDate(e.currentTarget.value)}
+            onChange={(event) => setExpDate(event.currentTarget.value)}
             required
           />
         </label>
@@ -115,7 +115,7 @@ export default function CheckoutInfo() {
             data-test-id="checkout-security-code"
             placeholder="Security code"
             value={securityCode}
-            onChange={(e) => setSecurityCode(e.currentTarget.value)}
+            onChange={(event) => setSecurityCode(event.currentTarget.value)}
             required
           />
         </label>
@@ -125,8 +125,21 @@ export default function CheckoutInfo() {
         type="button"
         onClick={async () => {
           await removeCookie();
+          router.refresh();
           router.push('/checkout/thankyou');
         }}
+        // disabled={
+        //   firstName.length === 0 ||
+        //   lastName.length === 0 ||
+        //   email.length === 0 ||
+        //   address.length === 0 ||
+        //   city.length === 0 ||
+        //   postalCode.length === 0 ||
+        //   country.length === 0 ||
+        //   creditCard.length === 0 ||
+        //   expDate.length === 0 ||
+        //   securityCode.length === 0
+        // }
       >
         Confirm Order
       </button>
