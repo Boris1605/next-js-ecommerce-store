@@ -63,7 +63,13 @@ export default async function RootLayout({
                 Products
               </Link>
               <Link href="/about">About</Link>
-              <Link href="/cart">Cart({productsCart})</Link>
+              <Link
+                href="/cart"
+                // data-test-id="cart-count"
+                data-test-id="cart-link"
+              >
+                Cart({productsCart})
+              </Link>
             </nav>
           </div>
         </header>

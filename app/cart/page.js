@@ -59,7 +59,10 @@ export default async function CartPage() {
                   width={80}
                   height={80}
                 /> */}
-                  <h3 className={styles.text}>
+                  <h3
+                    className={styles.text}
+                    data-test-id={`cart-product-quantity-${product.id}`}
+                  >
                     {product.name} ({product.quantity})
                   </h3>
                   <p>Sub total: €{product.quantity * product.price}</p>
@@ -69,7 +72,7 @@ export default async function CartPage() {
               </div>
             );
           })}
-          <div data-test-id="total-price">
+          <div data-test-id="cart-total">
             Total Price: €{totalPrice.toFixed(2)}
           </div>
           <Link href="/checkout" type="button" data-test-id="cart-checkout">
