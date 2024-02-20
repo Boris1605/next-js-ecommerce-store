@@ -1,25 +1,36 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+// @font-face {
+//   font-family: Roboto;
+//   src: url('./_assets/Roboto/Roboto-light.ttf');
+// }
+
 nav {
-  width: 100vw;
+  width: 100%;
   height: 4rem;
-  background: rgb(230, 215, 215);
+  // background: rgb(230, 215, 215);
+  background: #f9ead5;
   display: flex;
   justify-content: space-around;
   align-items: center;
 
-  > div {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-  }
+  // > div {
+  //   display: flex;
+  //   align-items: center;
+  //   gap: 0.625rem;
+  // }
 
   > div a {
     margin: 0.25rem;
   }
+}
+
+body {
+  background-color: #d3cec6;
 }
 
 button {
@@ -30,7 +41,21 @@ button {
 }
 
 footer {
-  background-color: rgb(230, 215, 215);
+  // background-color: rgb(230, 215, 215);
+  background-color: #f9ead5;
   bottom: 0;
   align-items: center;
+  width: 100%;
+}
+
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjust navbar height for mobile */
+  .navbar {
+    height: 3rem;
+  }
 }

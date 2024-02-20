@@ -12,7 +12,7 @@ export default function ReduceQuantityButton({ product }) {
 
   return (
     <div>
-      <button onClick={reduceProduct}>-</button>
+      <button onClick={reduceProduct}>Reduce quantity</button>
     </div>
   );
 }

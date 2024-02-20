@@ -2,9 +2,9 @@ import Link from 'next/link';
 import { getProductsInsecure } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+import ReduceQuantityButton from './ReduceQuantityButton';
 import RemoveFromCartButton from './RemoveFromCartButton';
 import styles from './page.module.scss';
-import ReduceQuantityButton from './ReduceQuantityButton';
 
 export const metadata = {
   default: 'Cart Page',
@@ -39,7 +39,7 @@ export default async function CartPage() {
     <main>
       <div className={styles.main}>
         <div>
-          <h1>Cart Total:</h1>
+          <h1>In your cart:</h1>
         </div>
         <div>
           {productsCart.map((product) => {
@@ -56,15 +56,16 @@ export default async function CartPage() {
                   width={80}
                   height={80}
                 /> */}
-                  <h3
+                  <div
                     className={styles.text}
                     data-test-id={`cart-product-quantity-${Number(product.id)}`}
                   >
-                    {product.name} ({product.quantity})
-                  </h3>
+                    {product.quantity}x {product.name}
+                  </div>
                   <p>Sub total: €{product.quantity * product.price}</p>
-                  <RemoveFromCartButton product={product} />
                   <ReduceQuantityButton product={product} />
+                  <RemoveFromCartButton product={product} />
+                  <br />
                 </div>
               </div>
             );
