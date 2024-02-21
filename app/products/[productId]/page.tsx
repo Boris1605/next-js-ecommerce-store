@@ -34,7 +34,7 @@ export default async function ProductPage(props: Props) {
         <div className={styles.main}>
           <h1 className={styles.title}>Product: {singleProduct.name}</h1>
           <Image
-            src={`/images/${singleProduct.id}.webp`}
+            src={`/images/${singleProduct.name.toLowerCase()}.webp`}
             alt={singleProduct.name}
             width={200}
             height={200}
