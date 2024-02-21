@@ -11,8 +11,14 @@ export async function generateMetadata(props) {
   };
 }
 
+type Props = {
+  params: {
+    productId: number;
+  };
+};
+
 // Defining the ProductPage component
-export default async function ProductPage(props) {
+export default async function ProductPage(props: Props) {
   const singleProduct = await getProductInsecure(
     Number(props.params.productId),
   );
@@ -28,7 +34,7 @@ export default async function ProductPage(props) {
         <div className={styles.main}>
           <h1 className={styles.title}>Product: {singleProduct.name}</h1>
           <Image
-            src={`/images/${singleProduct.name.toLowerCase()}.webp`}
+            src={`/images/${singleProduct.id}.webp`}
             // src={singleProduct?.image}
             alt={singleProduct?.name}
             width={200}

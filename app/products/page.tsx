@@ -25,7 +25,7 @@ export default async function ProductsPage() {
               <div
                 className={styles.singleProduct}
                 key={`products-${product.id}`}
-                data-test-id={`product-type-${product.type}`}
+                data-test-id={`product-${product.id}`}
               >
                 <Link href={`/products/${product.id}`}>
                   <div>{product.name}</div>

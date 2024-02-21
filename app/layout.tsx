@@ -20,6 +20,14 @@ export const metadata = {
   description: 'Here you can find smart gadgets',
 };
 
+type ProductQuantity = {
+  id: number;
+  name: string;
+  type: string;
+  price: number;
+  currency: string;
+  quantity: number;
+};
 export default async function RootLayout({
   children,
 }: {
@@ -41,8 +49,11 @@ export default async function RootLayout({
   });
 
   const productsCart = productsWithQuantity
-    .filter((product: Product) => product.quantity)
-    .reduce((total: number, product: Product) => total + product.quantity, 0);
+    .filter((product: ProductQuantity) => product.quantity)
+    .reduce(
+      (total: number, product: ProductQuantity) => total + product.quantity,
+      0,
+    );
   return (
     <html lang="en">
       <body className={inter.className}>
