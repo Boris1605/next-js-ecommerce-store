@@ -80,7 +80,7 @@ export default async function RootLayout({
                 // data-test-id="cart-count"
                 data-test-id="cart-link"
               >
-                Cart({productsCart})
+                Cart (<span data-test-id="cart-count">{productsCart}</span>)
               </Link>
             </nav>
           </div>

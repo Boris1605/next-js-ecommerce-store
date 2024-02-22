@@ -32,8 +32,9 @@ export default async function ProductPage(props: Props) {
     <main>
       <div>
         <div className={styles.main}>
-          <h1 className={styles.title}>Product: {singleProduct.name}</h1>
+          <h1 className={styles.title}>{singleProduct.name}</h1>
           <Image
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             src={`/images/${singleProduct.name.toLowerCase()}.webp`}
             alt={singleProduct.name}
             width={200}

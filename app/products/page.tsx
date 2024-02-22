@@ -25,9 +25,11 @@ export default async function ProductsPage() {
               <div
                 className={styles.singleProduct}
                 key={`products-${product.id}`}
-                data-test-id={`product-${product.id}`}
               >
-                <Link href={`/products/${product.id}`}>
+                <Link
+                  href={`/products/${product.id}`}
+                  data-test-id={`product-${product.id}`}
+                >
                   <div>{product.name}</div>
                   <Image
                     src={`/images/${product.name.toLowerCase()}.webp`}

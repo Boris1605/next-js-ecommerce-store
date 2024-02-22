@@ -48,7 +48,7 @@ export default function ProductQuantityForm(props: Props) {
           //   }
           // }}
           // type="submit"
-          data-test-id="product-add-cart"
+          data-test-id="product-add-to-cart"
         >
           Add to cart
         </button>

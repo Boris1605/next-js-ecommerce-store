@@ -56,13 +56,16 @@ export default async function CartPage() {
                   width={80}
                   height={80}
                 /> */}
-                  <div
-                    className={styles.text}
-                    data-test-id={`cart-product-quantity-${Number(product.id)}`}
-                  >
-                    {product.quantity}x {product.name}
+                  <div className={styles.text}>
+                    Sub Total: €
+                    <span
+                      data-test-id={`cart-product-quantity-${Number(product.id)}`}
+                    >
+                      {product.quantity}
+                    </span>
+                    x {product.name}
                   </div>
-                  <p>Sub total: €{product.quantity * product.price}</p>
+                  <p>{product.quantity * product.price}</p>
                   <ReduceQuantityButton product={product} />
                   <RemoveFromCartButton product={product} />
                   <br />
@@ -70,8 +73,9 @@ export default async function CartPage() {
               </div>
             );
           })}
-          <div data-test-id="cart-total">
-            Total Price: €{totalPrice.toFixed(2)}
+          <div>
+            Total Price: €
+            <span data-test-id="cart-total">{totalPrice.toFixed(2)}</span>
           </div>
           <Link href="/checkout" type="button" data-test-id="cart-checkout">
             Checkout
