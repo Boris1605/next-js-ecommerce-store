@@ -1,4 +1,6 @@
 import styles from './page.module.scss';
+
+
 // Metadata for the About page
 export const metadata = {
   title: 'About', // Title of the page
