@@ -16,6 +16,11 @@ This project is an E-Commerce store built using Next.js. It allows users to brow
 
 ## Screenshots
 
+<img width="1439" alt="Bildschirmfoto 2024-04-08 um 12 48 40" src="https://github.com/Boris1605/next-js-ecommerce-store/assets/55455069/49afda86-11ab-49c1-8a31-f039454ce12a">
+
+<img width="1438" alt="Bildschirmfoto 2024-04-08 um 12 48 59" src="https://github.com/Boris1605/next-js-ecommerce-store/assets/55455069/881eda35-a2f8-4ba4-a52e-ed45555d653d">
+
+
 ## Setup Instructions
 
 1. Fork the Repository from GitHub: Visit the GitHub repository for the project and click on the "Fork" button in the upper right corner to fork the repository to your own GitHub account.
